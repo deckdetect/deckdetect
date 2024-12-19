@@ -21,7 +21,7 @@ h2{
 }
 
 
-.index-background{
+.index-back-ground{
   position: relative; /* Allows positioning pseudo-elements */
   width: 100%;
   height: 100vh; /* Full viewport height */
