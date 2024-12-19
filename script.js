@@ -147,7 +147,7 @@ function handleUploadButtonClick() {
       // Hide cropper container and show the upload placeholder
       cropperContainer.style.display = "none";
       const resultsBackground = document.querySelector(".results-background");
-      const indexBackground = document.querySelector(".index-background");
+      const indexBackground = document.querySelector(".index-back-ground");
 
       // Apply blur effect
       if (resultsBackground) resultsBackground.classList.add("blurred");
