@@ -1,0 +1,394 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Luminari', serif;
+  color: #000000;
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2{
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+
+.index-background{
+  position: relative; /* Allows positioning pseudo-elements */
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevents overflow */
+  background: url('assets/background_image_clean.png') no-repeat center center fixed;
+  background-size: cover;
+
+}
+
+.results-background{
+  position: relative; /* Allows positioning pseudo-elements */
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevents overflow */
+  background: url('assets/background_image_blur.png') no-repeat center center fixed;
+  background-size: cover;
+
+}
+
+/* Main Container */
+.main-container {
+  display: flex;
+  /*flex-wrap: wrap;*/
+  width: 100%;
+  height: 100%;
+  /*background-color: rgba(255, 255, 255, 0.9);*/
+  padding: 20px;
+  border-radius: 8px;
+  /*box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);*/
+}
+
+
+/* Right Side: Image and Upload Button */
+
+.title {
+  font-size: 3rem;
+  margin: 10px 0;
+  color: #fffcfc;
+}
+
+/* Remove underline and inherit styles */
+/* .title-link {
+  text-decoration: none; 
+  color: inherit; 
+}
+
+.title-link:hover {
+  color: #31456f; 
+  cursor: pointer;
+} */
+
+#deckdetect-title:hover {
+  color: #31456f; /* Optional: Add a hover color effect */
+  cursor: pointer;
+}
+
+
+.card-side {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  height: 100%; /* Ensures full height usage */
+}
+
+.upload-button {
+  background-color: #1e2b4b;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+  background-color: #31456f;
+}
+
+
+/* Left Side Content */
+.content {
+  margin-top: 10px;
+  flex: 1 1 50%;
+  padding: 10px;
+  max-width: 600px;
+
+      /* Flexbox for positioning */
+  display: flex;
+  flex-direction: column;
+  /*justify-content: space-between;  Pushes content to top and bottom */
+  height: 100%; /* Ensures full height usage */
+}
+
+
+
+.subtitle {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.description {
+  font-size: 1.2rem;
+  margin: 20px 0;
+  margin-top: 20px;
+}
+
+.card-details {
+  list-style-type: none;
+  margin: 20px 0;
+  font-size: 1.1rem;
+}
+
+.card-details li {
+  margin-bottom: 10px;
+}
+
+.creators {
+  font-size: 1rem;
+  font-style: italic;
+  margin-top: auto;
+  margin-bottom: 50px;
+}
+
+
+
+
+/* Results page only   */
+
+
+.content-section {
+  display: none; /* Initially hidden */
+  flex: 1;
+}
+
+.content-section.active {
+  display: block; /* Display active section */
+}
+
+/* Card Boxes */
+.card-box {
+  background: url('assets/old_scroll.jpg');
+  /* background-color: #e6c68a; */
+  /* border: 2px solid #8b4513; */
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.7);
+  border-radius: 8px; /* Slightly rounded corners */
+  padding: 15px;
+  margin: 20px 0;
+  font-family: 'Georgia', serif; /* Classic font for an old scroll look */
+  color: #1e1c1b; /* Dark brown text color */
+  line-height: 1.6; /* Improved readability */
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5); /* Soft highlight for text */
+}
+
+.card-box p {
+  margin: 10px 0; /* Space between lines */
+}
+
+.card-box strong {
+  font-weight: bold;
+  color: #1c1310; /* Highlighted darker shade for titles */
+  text-transform: uppercase; /* Titles in uppercase for emphasis */
+}
+
+.card-box p:last-child {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #8b0000; /* Dark red for price emphasis */
+}
+
+/* Card List */
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-item {
+  background-color: #1e2b4b;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+
+.nav-buttons button {
+  padding: 10px 20px;
+  background-color: #1e2b4b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nav-buttons button:hover {
+  background-color: #31456f;
+}
+
+.nav-button.selected {
+
+  color: #1e2b4b;
+  background-color: #ffffff;
+  font-weight: bold; /* Optional: Make text bold */
+}
+
+.card-picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 600px;
+  margin: 10px auto; /* Center horizontally and add vertical spacing */
+}
+
+.card-image {
+  width: 100%; /* Make the image fit the width of the container */
+  height: 100%; /* Make the image fit the height of the container */
+  object-fit: cover; /* Ensure the image maintains its aspect ratio while covering the area */
+  border-radius: 20px; /* Optional: Add slight rounding for aesthetics */
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.7);
+}
+
+.image-preview-container {
+  position: fixed; /* Ensures it's positioned relative to the viewport */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%); /* Centers the container */
+  width: 60vw; /* 80% of the viewport width */
+  height: 60vh; /* 80% of the viewport height */
+  /* background-color: rgba(0, 0, 0, 0.8); */
+  z-index: 10000; /* Brings it above other content */
+  display: none; /* Hidden by default */
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Optional shadow for styling */
+}
+
+.image-preview-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+body, html {
+  overflow: visible; /* Ensure cropping tool is not clipped */
+}
+
+/* Price Graph Image with Transparency */
+#price-graph img {
+  width: 100%; /* Fit inside card box */
+  height: auto;
+  display: block;
+  margin: auto;
+  opacity: 0.6; /* 80% visibility */
+  border-radius: 8px;
+}
+
+#card-similar {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+#card-counter {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.card img {
+  width: 160px; /* Adjust image width */
+  height: auto;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Container for the loading animation */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px; /* Adjust as needed */
+}
+
+/* Spinner animation */
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(0, 0, 0, 0.1); /* Light border */
+  border-top-color: #3498db; /* Spinner color */
+  border-radius: 50%;
+  animation: spin 1s linear infinite; /* Smooth spinning */
+  margin-bottom: 10px;
+}
+
+/* Spinner keyframes */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Loading text */
+.loading-container p {
+  font-family: 'Arial', sans-serif;
+  color: #555; /* Subtle color for text */
+  font-size: 1.2rem;
+}
+
+#user-card-image {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.loading-animation {
+  max-width: 100%;
+  height: auto;
+}
+
+#unpack-animation-placeholder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60vw; /* 80% of the viewport width */
+  height: 60vh; /* 80% of the viewport height */
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  align-items: center; /* Centers the video vertically */
+  justify-content: center; /* Centers the video horizontally */
+  background: transparent; /* Match the cropper tool's background */
+  box-sizing: border-box;
+}
+
+.blurred {
+  filter: blur(10px); /* Adjust the blur intensity */
+  pointer-events: none; /* Prevent interactions with blurred content */
+  transition: filter 0.3s ease; /* Smooth transition for the blur */
+}
+
+#unpack-animation-placeholder {
+  position: absolute; /* Position it on top of everything */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000; /* Ensure it's above blurred background */
+}
+
+#deckdetect-title {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#deckdetect-title:active {
+  transform: scale(1.1); /* Slight zoom-in on click */
+}

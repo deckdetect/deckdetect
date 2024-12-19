@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DeckDetect</title>
+    <link rel="stylesheet" href="Style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/cropperjs/dist/cropper.min.css"
+    />
+  </head>
+  <body>
+    <div class="index-background">
+      <!-- Main container -->
+      <div class="main-container">
+        <!-- Left Side Content -->
+        <div class="content">
+          <h2 class="subtitle">Home Page</h2>
+          <p class="description">
+            We have created an application that will take a photo of a card and
+            show you:
+          </p>
+          <ul class="card-details">
+            <li>- The Card details</li>
+            <li>- Card Price</li>
+            <li>- Counter Cards</li>
+            <li>- Similar Cards</li>
+          </ul>
+          <p class="creators">
+            Created By: Konstantin the Noble, Jan the Megafan, Maite the Writer,
+            Romain the Main Man, and Sir Pete von-Swampington
+          </p>
+        </div>
+
+        <!-- Right Side: Image and Upload Button -->
+        <div class="card-side">
+          <h1 class="title" id="deckdetect-title">Deck Detect</h1>
+
+          <div class="image-preview-container">
+            <img
+              id="image-preview"
+              src=""
+              alt="Image Preview"
+              style="display: none"
+            />
+          </div>
+
+          <button
+            id="dynamic-button"
+            class="upload-button"
+            onclick="handleUploadButtonClick()"
+          >
+            Upload Card
+          </button>
+
+          <!-- Hidden file input for upload -->
+          <input
+            type="file"
+            id="card-upload"
+            accept="image/*"
+            style="display: none"
+          />
+
+          <!-- Image preview for cropping -->
+        </div>
+      </div>
+    </div>
+    <div
+      id="unpack-animation-placeholder"
+      style="text-align: center; margin-top: 50px"
+    ></div>
+    <script src="https://unpkg.com/cropperjs/dist/cropper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
